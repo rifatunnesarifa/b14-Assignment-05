@@ -4,6 +4,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(128, 128, 128, 0.24);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
 }
 
 nav ul {
@@ -52,12 +56,12 @@ nav ul li {
   display: none;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 767px) {
   nav {
     font-size: 15px;
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: sticky;
     padding: 10px 15px;
   }
 
