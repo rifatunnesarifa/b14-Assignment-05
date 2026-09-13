@@ -2,6 +2,8 @@ import "./Technologies.css";
 import TechCards from "./TechCards";
 import { useEffect, useState } from "react";
 import type { Technology } from "../types/Technology";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Technologies() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
@@ -19,6 +21,8 @@ export default function Technologies() {
 
   function handleAdd(id: string) {
     setSelectedIds((prev) => [...prev, id]);
+    const tech = technologies.find((t) => t.id === id);
+    toast.success(`${tech?.name ?? "Technology"} added successfully!`);
   }
 
   function handleRemove(id: string) {
@@ -39,6 +43,8 @@ export default function Technologies() {
 
   return (
     <section>
+      <ToastContainer position="top-right" autoClose={2000} aria-label="Notifications" />
+
       <div className="layout1">
         <div className="pageHeader">
           <h1>
