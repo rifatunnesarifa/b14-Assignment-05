@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 50px;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   padding: 32px;
@@ -30,7 +31,7 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background-color: #db2777;
+  background: var(--brand-gradient);
   color: white;
   font-size: 12px;
   font-weight: 700;
@@ -43,7 +44,10 @@
 }
 
 .footerLogoText .highlight {
-  color: #db2777;
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .footerTagline {

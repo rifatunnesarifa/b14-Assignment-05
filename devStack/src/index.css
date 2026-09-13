@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --brand-gradient: linear-gradient(90deg, #FF5722, #D81B7E, #7C3AED);
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
@@ -8,4 +12,16 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
+}
+
+@media (max-width: 1440px) {
+  .designLayout {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .designLayout {
+    padding: 0;
+  }
 }
