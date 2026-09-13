@@ -1,19 +1,98 @@
-.tech-card {
+.techCard {
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 24px;
   background-color: white;
+  max-width: 420px;
 }
-.tech-icon {
-  width: 50px;
-  height: 50px;
+
+.techCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.techIcon {
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
-.tech-badge {
+.techBadge {
   display: inline-block;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2563eb;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+}
+
+.techCard h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.techDescription {
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.techMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.techCategory {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
   background-color: #f3f4f6;
+  color: #374151;
+}
+
+.techDifficulty {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.techRating {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.techButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: #111827;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.techButton:hover {
+  background-color: #1f2937;
+}
+.techButton:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.techButton:disabled:hover {
+  background-color: #9ca3af;
 }

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 .designLayout{
+  font-family: Arial, Helvetica, sans-serif;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 ;

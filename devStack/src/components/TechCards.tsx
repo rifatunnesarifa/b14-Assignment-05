@@ -3,30 +3,39 @@ import type { Technology } from "../types/Technology";
 
 type TechCardProps = {
   technology: Technology;
+  selected: boolean;
+  onAdd: (id: string) => void;
 };
-export default function TechCards({ technology }: TechCardProps) {
+export default function TechCards({ technology, selected, onAdd }: TechCardProps) {
 
   return (
-    <div className="tech-card">
-      <img
-  className="tech-icon"
-  src={technology.icon}
-  alt={technology.name}
-/>
-
-      <span className="tech-badge">{technology.badge}</span>
+    <div className="techCard">
+      <div className="techCardTop">
+        <img
+          className="techIcon"
+          src={technology.icon}
+          alt={technology.name}
+        />
+        <span className="techBadge">{technology.badge}</span>
+      </div>
 
       <h3>{technology.name}</h3>
 
-      <p>{technology.description}</p>
+      <p className="techDescription">{technology.description}</p>
 
-      <span>{technology.category}</span>
+      <div className="techMeta">
+        <span className="techCategory">{technology.category}</span>
+        <span className="techDifficulty">{technology.difficulty}</span>
+        <span className="techRating">⭐ {technology.rating}</span>
+      </div>
 
-      <p>{technology.difficulty}</p>
-
-      <p>⭐ {technology.rating}</p>
-
-      <button>Add to Stack</button>
+      <button
+        className="techButton"
+        disabled={selected}
+        onClick={() => onAdd(technology.id)}
+      >
+        {selected ? "Added to Stack" : "Add to Stack"}
+      </button>
     </div>
   );
 

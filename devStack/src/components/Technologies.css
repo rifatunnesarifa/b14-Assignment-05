@@ -1,17 +1,150 @@
-.tech-grid {
+.layout1{
+  display: flex;
+  flex-direction: column;
+}
+.pageHeader {
+  margin-bottom: 32px;
+}
+
+.pageHeader h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.pageHeader .highlight {
+  color: #db2777;
+}
+
+.pageHeader p {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.techLayout {
+  display: flex;
+  gap: 24px;
+  align-items: start;
+}
+
+.techGrid {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: start;
 }
 
 @media (max-width: 1024px) {
-  .tech-grid {
+  .techGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 767px) {
-  .tech-grid {
+  .techGrid {
     grid-template-columns: 1fr;
   }
+}
+
+.stackSidebar {
+  width: 280px;
+  flex-shrink: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  background-color: white;
+}
+
+@media (max-width: 1024px) {
+  .techLayout {
+    flex-direction: column;
+  }
+
+  .stackSidebar {
+    width: 100%;
+  }
+}
+
+.stackSidebar h2 {
+  margin: 0 0 4px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.stackCount {
+  margin: 0 0 16px 0;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.stackList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stackItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.stackIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.stackItemText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stackItemName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.stackItemCategory {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.stackRemoveBtn {
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.stackRemoveBtn:hover {
+  color: #ef4444;
+}
+
+.removeAllBtn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  background-color: white;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.removeAllBtn:hover {
+  background-color: #fef2f2;
 }
