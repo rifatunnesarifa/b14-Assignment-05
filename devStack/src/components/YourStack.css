@@ -1,0 +1,19 @@
+.stackSidebar {
+  position: sticky;
+  top: 70px;
+}
+
+.stackEmpty {
+  padding: 24px 12px;
+  border: 1px dashed #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .stackSidebar {
+    position: static;
+  }
+}

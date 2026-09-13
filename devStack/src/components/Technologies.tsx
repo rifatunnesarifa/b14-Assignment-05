@@ -1,5 +1,6 @@
 import "./Technologies.css";
 import TechCards from "./TechCards";
+import YourStack from "./YourStack";
 import { useEffect, useState } from "react";
 import type { Technology } from "../types/Technology";
 import { ToastContainer, toast } from "react-toastify";
@@ -20,6 +21,10 @@ export default function Technologies() {
   }, []);
 
   function handleAdd(id: string) {
+    if (selectedIds.includes(id)) {
+      toast.warning("This technology is already in your stack!");
+      return;
+    }
     setSelectedIds((prev) => [...prev, id]);
     const tech = technologies.find((t) => t.id === id);
     toast.success(`${tech?.name ?? "Technology"} added successfully!`);
@@ -27,10 +32,13 @@ export default function Technologies() {
 
   function handleRemove(id: string) {
     setSelectedIds((prev) => prev.filter((selectedId) => selectedId !== id));
+    const tech = technologies.find((t) => t.id === id);
+    toast.info(`${tech?.name ?? "Technology"} removed from your stack`);
   }
 
   function handleRemoveAll() {
     setSelectedIds([]);
+    toast.error("All technologies removed from your stack");
   }
 
   if (loading) {
@@ -65,37 +73,11 @@ export default function Technologies() {
             ))}
           </div>
 
-          <aside className="stackSidebar">
-            <h2>Your Stack</h2>
-            <p className="stackCount">
-              {selectedIds.length} Technology Selected
-            </p>
-
-            <div className="stackList">
-              {selectedTechnologies.map((tech) => (
-                <div key={tech.id} className="stackItem">
-                  <img src={tech.icon} alt={tech.name} className="stackIcon" />
-                  <div className="stackItemText">
-                    <span className="stackItemName">{tech.name}</span>
-                    <span className="stackItemCategory">{tech.category}</span>
-                  </div>
-                  <button
-                    className="stackRemoveBtn"
-                    onClick={() => handleRemove(tech.id)}
-                    aria-label={`Remove ${tech.name}`}
-                  >
-                    ×
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            {selectedIds.length > 0 && (
-              <button className="removeAllBtn" onClick={handleRemoveAll}>
-                Remove All
-              </button>
-            )}
-          </aside>
+          <YourStack
+            technologies={selectedTechnologies}
+            onRemove={handleRemove}
+            onRemoveAll={handleRemoveAll}
+          />
         </div>
       </div>
     </section>
