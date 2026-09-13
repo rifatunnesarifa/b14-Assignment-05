@@ -11,7 +11,7 @@ export default function Technologies() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("/src/data/technologies.json")
+    fetch("/Technologies.json")
       .then((response) => response.json())
       .then((data) => {
         setTechnologies(data);

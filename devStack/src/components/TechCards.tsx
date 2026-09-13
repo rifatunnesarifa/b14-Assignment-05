@@ -34,7 +34,7 @@ export default function TechCards({ technology, selected, onAdd }: TechCardProps
         disabled={selected}
         onClick={() => onAdd(technology.id)}
       >
-        {selected ? "Added to Stack" : "Add to Stack"}
+        {selected ? "✓ Added to Stack" : "Add to Stack"}
       </button>
     </div>
   );

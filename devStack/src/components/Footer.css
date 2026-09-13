@@ -153,7 +153,8 @@
   }
 
   .footerBottom {
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
     gap: 10px;
     text-align: center;
   }
