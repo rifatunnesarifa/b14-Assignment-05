@@ -1,0 +1,77 @@
+
+section{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+h2 {
+  font-size: 70px;
+  font-weight: 700;
+}
+.h2sec{
+  background: linear-gradient(90deg,#FF5722,#D81B7E,#7C3AED);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+.Herobuttons{
+  max-width: 400px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+.Herobtn1:hover, .Herobtn2:hover{
+  cursor: pointer;
+  transform: scale(0.9, 0.9);
+}
+.Herobtn1{
+  color: white;
+  border-radius: 20px;
+  background: linear-gradient(90deg,#F97316,#EC4899);
+  padding: 20px;
+}
+.Herobtn2{
+  padding: 20px 40px;
+  border: 1px solid rgba(128, 128, 128, 0.24);
+  border-radius: 20px ;
+}
+p{
+  margin: 25px 0;
+  color: rgb(58, 54, 54);
+  max-width: 473px;
+}
+@media(max-width:480px){
+  section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+  }
+  h2{
+    font-size: 35px;
+  }
+  p{
+    font-size: 14px;
+  }
+  .Herobuttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .leftside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .Herobuttons{
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+  }
+}
