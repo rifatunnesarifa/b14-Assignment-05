@@ -26,7 +26,7 @@ export default function Technologies() {
       return;
     }
     setSelectedIds((prev) => [...prev, id]);
-    const tech = technologies.find((t) => t.id === id);
+    const tech = technologies.find((i) => i.id === id);
     toast.success(`${tech?.name ?? "Technology"} added successfully!`);
   }
 

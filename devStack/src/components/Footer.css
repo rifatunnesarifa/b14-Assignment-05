@@ -150,11 +150,11 @@
     gap: 0;
   }
 
-  .footerSocials a:not(:last-child)::after {
-    content: "•";
-    margin: 0 12px;
-    color: #d1d5db;
-  }
+.footerSocials a + a::before {
+  content: "•";
+  margin: 0 12px;
+  color: grey;
+}
 
   .footerBottom {
     justify-content: space-between;
